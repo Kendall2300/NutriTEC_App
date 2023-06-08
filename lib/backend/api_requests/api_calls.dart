@@ -91,7 +91,8 @@ class ConsultProductCall {
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'ConsultProduct',
-      apiUrl: 'test',
+      apiUrl:
+          'https://nutritec-api-pg.azurewebsites.net/api/client_get_aproved_product_dish',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
@@ -121,7 +122,7 @@ class AddRecipeCall {
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'AddRecipe',
-      apiUrl: 'test',
+      apiUrl: 'https://nutritec-api-pg.azurewebsites.net/api/insert_recipe',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
@@ -145,7 +146,7 @@ class DeleteRecipeCall {
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'DeleteRecipe',
-      apiUrl: 'test',
+      apiUrl: 'https://nutritec-api-pg.azurewebsites.net/api/delete_recipe',
       callType: ApiCallType.PUT,
       headers: {},
       params: {},
@@ -175,7 +176,7 @@ class EditRecipeCall {
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'EditRecipe',
-      apiUrl: 'test',
+      apiUrl: 'https://nutritec-api-pg.azurewebsites.net/api/update_recipe',
       callType: ApiCallType.PUT,
       headers: {},
       params: {},
@@ -205,7 +206,8 @@ class AddDailyConsumptionCall {
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'AddDailyConsumption',
-      apiUrl: 'test',
+      apiUrl:
+          'https://nutritec-api-pg.azurewebsites.net/api/assign_daily_consumption',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
@@ -244,11 +246,11 @@ String _serializeList(List? list) {
   }
 }
 
-String _serializeJson(dynamic jsonVar) {
-  jsonVar ??= {};
+String _serializeJson(dynamic jsonVar, [bool isList = false]) {
+  jsonVar ??= (isList ? [] : {});
   try {
     return json.encode(jsonVar);
   } catch (_) {
-    return '{}';
+    return isList ? '[]' : '{}';
   }
 }

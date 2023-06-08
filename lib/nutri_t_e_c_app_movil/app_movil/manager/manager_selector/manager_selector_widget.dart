@@ -18,7 +18,6 @@ class _ManagerSelectorWidgetState extends State<ManagerSelectorWidget> {
   late ManagerSelectorModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
-  final _unfocusNode = FocusNode();
 
   @override
   void initState() {
@@ -30,7 +29,6 @@ class _ManagerSelectorWidgetState extends State<ManagerSelectorWidget> {
   void dispose() {
     _model.dispose();
 
-    _unfocusNode.dispose();
     super.dispose();
   }
 
@@ -39,7 +37,7 @@ class _ManagerSelectorWidgetState extends State<ManagerSelectorWidget> {
     context.watch<FFAppState>();
 
     return GestureDetector(
-      onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
+      onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: Colors.black,

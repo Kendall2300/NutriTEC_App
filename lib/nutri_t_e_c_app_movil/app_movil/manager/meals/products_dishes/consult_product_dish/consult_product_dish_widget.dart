@@ -22,7 +22,6 @@ class _ConsultProductDishWidgetState extends State<ConsultProductDishWidget> {
   late ConsultProductDishModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
-  final _unfocusNode = FocusNode();
 
   @override
   void initState() {
@@ -36,7 +35,6 @@ class _ConsultProductDishWidgetState extends State<ConsultProductDishWidget> {
   void dispose() {
     _model.dispose();
 
-    _unfocusNode.dispose();
     super.dispose();
   }
 
@@ -45,7 +43,7 @@ class _ConsultProductDishWidgetState extends State<ConsultProductDishWidget> {
     context.watch<FFAppState>();
 
     return GestureDetector(
-      onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
+      onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: Colors.black,
@@ -266,7 +264,10 @@ class _ConsultProductDishWidgetState extends State<ConsultProductDishWidget> {
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 15.0),
                               child: AutoSizeText(
-                                FFAppState().Vitamins,
+                                valueOrDefault<String>(
+                                  FFAppState().Vitamins,
+                                  'Vitamins',
+                                ),
                                 textAlign: TextAlign.center,
                                 style: FlutterFlowTheme.of(context)
                                     .bodyLarge

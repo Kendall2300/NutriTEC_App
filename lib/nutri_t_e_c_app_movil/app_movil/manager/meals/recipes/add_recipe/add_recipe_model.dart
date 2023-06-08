@@ -10,6 +10,7 @@ import 'package:provider/provider.dart';
 class AddRecipeModel extends FlutterFlowModel {
   ///  State fields for stateful widgets in this page.
 
+  final unfocusNode = FocusNode();
   // State field(s) for TextField widget.
   TextEditingController? textController1;
   String? Function(BuildContext, String?)? textController1Validator;
@@ -30,11 +31,14 @@ class AddRecipeModel extends FlutterFlowModel {
   void initState(BuildContext context) {}
 
   void dispose() {
+    unfocusNode.dispose();
     textController1?.dispose();
     textController2?.dispose();
     textController3?.dispose();
     textController4?.dispose();
   }
+
+  /// Action blocks are added here.
 
   /// Additional helper methods are added here.
 

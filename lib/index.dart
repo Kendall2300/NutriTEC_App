@@ -1,0 +1,25 @@
+// Export pages
+export '/nutri_t_e_c_app_movil/home_page/home_page_widget.dart'
+    show HomePageWidget;
+export '/nutri_t_e_c_app_movil/app_movil/login/login_widget.dart'
+    show LoginWidget;
+export '/nutri_t_e_c_app_movil/app_movil/manager/manager_selector/manager_selector_widget.dart'
+    show ManagerSelectorWidget;
+export '/nutri_t_e_c_app_movil/app_movil/manager/meals/managers/meal_manager/meal_manager_widget.dart'
+    show MealManagerWidget;
+export '/nutri_t_e_c_app_movil/app_movil/manager/meals/managers/products_dishes_manager/products_dishes_manager_widget.dart'
+    show ProductsDishesManagerWidget;
+export '/nutri_t_e_c_app_movil/app_movil/manager/meals/managers/recipes_manager/recipes_manager_widget.dart'
+    show RecipesManagerWidget;
+export '/nutri_t_e_c_app_movil/app_movil/manager/meals/products_dishes/consult_product_dish/consult_product_dish_widget.dart'
+    show ConsultProductDishWidget;
+export '/nutri_t_e_c_app_movil/app_movil/manager/meals/recipes/add_recipe/add_recipe_widget.dart'
+    show AddRecipeWidget;
+export '/nutri_t_e_c_app_movil/app_movil/manager/meals/recipes/edit_recipe/edit_recipe_widget.dart'
+    show EditRecipeWidget;
+export '/nutri_t_e_c_app_movil/app_movil/manager/meals/recipes/consult_recipe/consult_recipe_widget.dart'
+    show ConsultRecipeWidget;
+export '/nutri_t_e_c_app_movil/app_movil/manager/meals/recipes/delete_recipe/delete_recipe_widget.dart'
+    show DeleteRecipeWidget;
+export '/nutri_t_e_c_app_movil/app_movil/manager/daily_consumption/add_daily_consumption/add_daily_consumption_widget.dart'
+    show AddDailyConsumptionWidget;

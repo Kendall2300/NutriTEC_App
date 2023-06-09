@@ -140,7 +140,12 @@ class _ConsultProductDishWidgetState extends State<ConsultProductDishWidget> {
                                             )
                                           : null,
                                 ),
-                                style: FlutterFlowTheme.of(context).bodyMedium,
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Readex Pro',
+                                      color: Colors.black,
+                                    ),
                                 validator: _model.textControllerValidator
                                     .asValidator(context),
                               ),
@@ -164,45 +169,42 @@ class _ConsultProductDishWidgetState extends State<ConsultProductDishWidget> {
                             );
                             if ((_model.apiResultloh?.succeeded ?? true)) {
                               setState(() {
-                                FFAppState().Vitamins = getJsonField(
+                                FFAppState().Vitamins =
+                                    ConsultProductCall.cPVitamins(
                                   (_model.apiResultloh?.jsonBody ?? ''),
-                                  r'''$''',
                                 ).toString();
                                 FFAppState().Calcium = getJsonField(
                                   (_model.apiResultloh?.jsonBody ?? ''),
                                   r'''$''',
                                 ).toString();
-                                FFAppState().Iron = getJsonField(
+                                FFAppState().Iron = ConsultProductCall.cPIron(
                                   (_model.apiResultloh?.jsonBody ?? ''),
-                                  r'''$''',
                                 ).toString();
-                                FFAppState().Description = getJsonField(
+                                FFAppState().Description =
+                                    ConsultProductCall.cPDescription(
                                   (_model.apiResultloh?.jsonBody ?? ''),
-                                  r'''$''',
                                 ).toString();
-                                FFAppState().PortionSize = getJsonField(
+                                FFAppState().PortionSize =
+                                    ConsultProductCall.cPPortionSize(
                                   (_model.apiResultloh?.jsonBody ?? ''),
-                                  r'''$''',
                                 ).toString();
-                                FFAppState().Energy = getJsonField(
+                                FFAppState().Energy =
+                                    ConsultProductCall.cPEnergy(
                                   (_model.apiResultloh?.jsonBody ?? ''),
-                                  r'''$''',
                                 ).toString();
-                                FFAppState().Fat = getJsonField(
+                                FFAppState().Fat = ConsultProductCall.cPFat(
                                   (_model.apiResultloh?.jsonBody ?? ''),
-                                  r'''$''',
                                 ).toString();
-                                FFAppState().Sodium = getJsonField(
+                                FFAppState().Sodium =
+                                    ConsultProductCall.cPSodium(
                                   (_model.apiResultloh?.jsonBody ?? ''),
-                                  r'''$''',
                                 ).toString();
-                                FFAppState().Carbs = getJsonField(
+                                FFAppState().Carbs = ConsultProductCall.cPCarbs(
                                   (_model.apiResultloh?.jsonBody ?? ''),
-                                  r'''$''',
                                 ).toString();
-                                FFAppState().Protein = getJsonField(
+                                FFAppState().Protein =
+                                    ConsultProductCall.cPProtein(
                                   (_model.apiResultloh?.jsonBody ?? ''),
-                                  r'''$''',
                                 ).toString();
                               });
                             } else {
@@ -257,17 +259,14 @@ class _ConsultProductDishWidgetState extends State<ConsultProductDishWidget> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Column(
-                          mainAxisSize: MainAxisSize.max,
+                          mainAxisSize: MainAxisSize.min,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 15.0),
                               child: AutoSizeText(
-                                valueOrDefault<String>(
-                                  FFAppState().Vitamins,
-                                  'Vitamins',
-                                ),
+                                FFAppState().Calories,
                                 textAlign: TextAlign.center,
                                 style: FlutterFlowTheme.of(context)
                                     .bodyLarge
@@ -280,7 +279,7 @@ class _ConsultProductDishWidgetState extends State<ConsultProductDishWidget> {
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 15.0),
-                              child: Text(
+                              child: AutoSizeText(
                                 FFAppState().Calcium,
                                 textAlign: TextAlign.center,
                                 style: FlutterFlowTheme.of(context)
@@ -294,7 +293,7 @@ class _ConsultProductDishWidgetState extends State<ConsultProductDishWidget> {
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 15.0),
-                              child: Text(
+                              child: AutoSizeText(
                                 FFAppState().Iron,
                                 textAlign: TextAlign.center,
                                 style: FlutterFlowTheme.of(context)
@@ -308,7 +307,7 @@ class _ConsultProductDishWidgetState extends State<ConsultProductDishWidget> {
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 15.0),
-                              child: Text(
+                              child: AutoSizeText(
                                 FFAppState().PortionSize,
                                 style: FlutterFlowTheme.of(context)
                                     .bodyLarge
@@ -321,7 +320,7 @@ class _ConsultProductDishWidgetState extends State<ConsultProductDishWidget> {
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 15.0),
-                              child: Text(
+                              child: AutoSizeText(
                                 FFAppState().Energy,
                                 textAlign: TextAlign.center,
                                 style: FlutterFlowTheme.of(context)
@@ -335,7 +334,7 @@ class _ConsultProductDishWidgetState extends State<ConsultProductDishWidget> {
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 15.0),
-                              child: Text(
+                              child: AutoSizeText(
                                 FFAppState().Fat,
                                 textAlign: TextAlign.center,
                                 style: FlutterFlowTheme.of(context)
@@ -349,7 +348,7 @@ class _ConsultProductDishWidgetState extends State<ConsultProductDishWidget> {
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 15.0),
-                              child: Text(
+                              child: AutoSizeText(
                                 FFAppState().Sodium,
                                 textAlign: TextAlign.center,
                                 style: FlutterFlowTheme.of(context)
@@ -363,7 +362,7 @@ class _ConsultProductDishWidgetState extends State<ConsultProductDishWidget> {
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 15.0),
-                              child: Text(
+                              child: AutoSizeText(
                                 FFAppState().Carbs,
                                 style: FlutterFlowTheme.of(context)
                                     .bodyLarge
@@ -376,7 +375,7 @@ class _ConsultProductDishWidgetState extends State<ConsultProductDishWidget> {
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 15.0),
-                              child: Text(
+                              child: AutoSizeText(
                                 FFAppState().Protein,
                                 textAlign: TextAlign.center,
                                 style: FlutterFlowTheme.of(context)
@@ -390,7 +389,7 @@ class _ConsultProductDishWidgetState extends State<ConsultProductDishWidget> {
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 25.0),
-                              child: Text(
+                              child: AutoSizeText(
                                 FFAppState().Description,
                                 textAlign: TextAlign.center,
                                 style: FlutterFlowTheme.of(context)

@@ -104,6 +104,47 @@ class ConsultProductCall {
       cache: false,
     );
   }
+
+  static dynamic cPVitamins(dynamic response) => getJsonField(
+        response,
+        r'''$.result.vitamins''',
+      );
+  static dynamic cPCalcium(dynamic response) => getJsonField(
+        response,
+        r'''$.result.calcium''',
+      );
+  static dynamic cPIron(dynamic response) => getJsonField(
+        response,
+        r'''$.result.iron''',
+      );
+  static dynamic cPDescription(dynamic response) => getJsonField(
+        response,
+        r'''$.result.description''',
+      );
+  static dynamic cPPortionSize(dynamic response) => getJsonField(
+        response,
+        r'''$.result.portion_size''',
+      );
+  static dynamic cPEnergy(dynamic response) => getJsonField(
+        response,
+        r'''$.result.energy''',
+      );
+  static dynamic cPFat(dynamic response) => getJsonField(
+        response,
+        r'''$.result.fat''',
+      );
+  static dynamic cPSodium(dynamic response) => getJsonField(
+        response,
+        r'''$.result.sodium''',
+      );
+  static dynamic cPCarbs(dynamic response) => getJsonField(
+        response,
+        r'''$.result.carbs''',
+      );
+  static dynamic cPProtein(dynamic response) => getJsonField(
+        response,
+        r'''$.result.protein''',
+      );
 }
 
 class AddRecipeCall {

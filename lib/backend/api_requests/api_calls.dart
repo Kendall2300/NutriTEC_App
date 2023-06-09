@@ -92,7 +92,7 @@ class ConsultProductCall {
     return ApiManager.instance.makeApiCall(
       callName: 'ConsultProduct',
       apiUrl:
-          'https://nutritec-api-pg.azurewebsites.net/api/client_get_aproved_product_dish',
+          'https://nutritec-api-pg.azurewebsites.net/api/nutri_search_product',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
